@@ -22,7 +22,7 @@ const Roadmap = () => {
           />
           <p className="text-n-3 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Discover our exciting roadmap and upcoming features that will
-            enhance your child's learning experience.
+            enhance your child&apos;s learning experience.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full mt-6"></div>
         </div>

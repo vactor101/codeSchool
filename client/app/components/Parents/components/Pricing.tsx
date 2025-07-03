@@ -46,8 +46,8 @@ const Pricing = () => {
             className="mb-4"
           />
           <p className="text-n-3 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Choose the perfect plan for your child's coding journey. All plans
-            include expert instruction and hands-on projects.
+            Choose the perfect plan for your child&apos;s coding journey. All
+            plans include expert instruction and hands-on projects.
           </p>
         </div>
 
@@ -64,11 +64,11 @@ const Pricing = () => {
         <div className="text-center space-y-6">
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 sm:p-8 text-white max-w-2xl mx-auto">
             <h3 className="text-lg sm:text-xl font-bold mb-3">
-              Ready to Start Your Child's Coding Adventure?
+              Ready to Start Your Child&apos;s Coding Adventure?
             </h3>
             <p className="text-purple-100 mb-4 text-sm sm:text-base">
-              Join thousands of families who trust Code School for their child's
-              tech education.
+              Join thousands of families who trust Code School for their
+              child&apos;s tech education.
             </p>
             <Link
               href="/pricing"
