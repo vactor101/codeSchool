@@ -8,14 +8,17 @@ import Roadmap from "./components/Roadmap";
 
 const Schools = () => {
   return (
-    <>
-      <Hero />
-      <Benefits />
-      <Collaboration />
-      <Services />
-      {/* <Pricing /> */}
-      <Roadmap />
-    </>
+    <div className="min-h-screen bg-gradient-to-b from-n-8 to-n-6 overflow-x-hidden">
+      <div className="relative">
+        <Hero />
+        <div className="space-y-16 md:space-y-20 lg:space-y-24">
+          <Benefits />
+          <Collaboration />
+          <Services />
+          <Roadmap />
+        </div>
+      </div>
+    </div>
   );
 };
 

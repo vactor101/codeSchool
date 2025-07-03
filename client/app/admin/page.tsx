@@ -7,26 +7,34 @@ import DashboardHero from "../components/Admin/DashboardHero";
 
 type Props = {};
 
-const page = (props: Props) => {
+const AdminPage = (props: Props) => {
   return (
-    <div>
-      <AdminProtected>
+    <AdminProtected>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#0F1419] dark:to-[#111C43]">
         <Heading
-          title="Code School - Admin"
-          description="Code School is a platform for students to learn and get help from teachers"
-          keywords="Programming,MERN,Redux,Machine Learning"
+          title="Code School - Admin Dashboard"
+          description="Code School admin panel for managing platform content, users, courses, and analytics"
+          keywords="Admin,Dashboard,Programming,MERN,Redux,Machine Learning,Analytics"
         />
+
         <div className="flex min-h-screen">
-          <div className="1500px:w-[16%] w-1/5">
+          {/* Sidebar */}
+          <div className="fixed left-0 top-0 h-full z-50 transition-all duration-300 1500px:w-[16%] lg:w-[20%] md:w-[25%] hidden md:block">
             <AdminSidebar />
           </div>
-          <div className="w-[85%]">
-            <DashboardHero isDashboard={true} />
+
+          {/* Main Content */}
+          <div className="flex-1 md:ml-[25%] lg:ml-[20%] 1500px:ml-[16%] transition-all duration-300">
+            <div className="p-4 lg:p-6">
+              <DashboardHero isDashboard={true} />
+            </div>
           </div>
         </div>
-      </AdminProtected>
-    </div>
+
+        {/* Mobile sidebar overlay can be added here if needed */}
+      </div>
+    </AdminProtected>
   );
 };
 
-export default page;
+export default AdminPage;

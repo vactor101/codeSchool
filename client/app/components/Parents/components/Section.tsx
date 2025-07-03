@@ -16,32 +16,33 @@ const Section = ({
   children?: React.ReactNode;
 }) => {
   return (
-    <div
+    <section
       id={id}
       className={`
-      relative 
+      relative w-full overflow-hidden
       ${
         customPaddings ||
-        `py-10 lg:py-16 xl:py-20 ${crosses ? "lg:py-32 xl:py-40" : ""}`
-      } 
+        `py-12 sm:py-16 lg:py-20 xl:py-24 ${crosses ? "lg:py-28 xl:py-32" : ""}`
+      }
       ${className || ""}`}
     >
-      {children}
+      <div className="relative z-10">{children}</div>
 
-      <div className="hidden absolute top-0 left-5 w-0.25 h-full bg-stroke-1 pointer-events-none md:block lg:left-7.5 xl:left-10" />
-      <div className="hidden absolute top-0 right-5 w-0.25 h-full bg-stroke-1 pointer-events-none md:block lg:right-7.5 xl:right-10" />
+      {/* Decorative lines with better responsiveness */}
+      <div className="hidden absolute top-0 left-4 w-0.25 h-full bg-stroke-1/20 pointer-events-none sm:block md:left-6 lg:left-8 xl:left-10" />
+      <div className="hidden absolute top-0 right-4 w-0.25 h-full bg-stroke-1/20 pointer-events-none sm:block md:right-6 lg:right-8 xl:right-10" />
 
       {crosses && (
         <>
           <div
-            className={`hidden absolute top-0 left-7.5 right-7.5 h-0.25 bg-stroke-1 ${
+            className={`hidden absolute top-0 left-8 right-8 h-0.25 bg-stroke-1/20 ${
               crossesOffset && crossesOffset
-            } pointer-events-none lg:block xl:left-10 right-10`}
+            } pointer-events-none lg:block xl:left-10 xl:right-10`}
           />
           <SectionSvg crossesOffset={crossesOffset} />
         </>
       )}
-    </div>
+    </section>
   );
 };
 

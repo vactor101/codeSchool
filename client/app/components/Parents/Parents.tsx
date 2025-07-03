@@ -7,16 +7,19 @@ import Pricing from "./components/Pricing";
 import Roadmap from "./components/Roadmap";
 
 const Parents = () => {
-  
   return (
-    <>
-      <Hero />
-      <Benefits />
-      <Pricing />
-      <Collaboration />
-      <Services />
-      <Roadmap />
-    </>
+    <div className="min-h-screen bg-gradient-to-b from-n-8 to-n-6 overflow-x-hidden">
+      <div className="relative">
+        <Hero />
+        <div className="space-y-16 md:space-y-20 lg:space-y-24">
+          <Benefits />
+          <Pricing />
+          <Collaboration />
+          <Services />
+          <Roadmap />
+        </div>
+      </div>
+    </div>
   );
 };
 

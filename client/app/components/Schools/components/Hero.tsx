@@ -86,7 +86,7 @@ const Hero = () => {
 
   return (
     <Section
-      className="pt-[8rem] md:pt-[10rem] lg:pt-[12rem] -mt-[3rem] md:-mt-[5.25rem]"
+      className="pt-[6rem] sm:pt-[8rem] md:pt-[10rem] lg:pt-[12rem] pb-8 md:pb-16 lg:pb-20"
       crosses
       crossesOffset="lg:translate-y-[5.25rem]"
       customPaddings
@@ -98,12 +98,12 @@ const Hero = () => {
         dir={direction}
       >
         {/* Hero Content */}
-        <div className="relative z-10 max-w-[56rem] md:max-w-[62rem] mx-auto text-center mb-12 md:mb-16 lg:mb-[6.25rem]">
+        <div className="relative z-10 max-w-[56rem] md:max-w-[62rem] mx-auto text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 px-4">
           <motion.h1
             variants={titleVariants}
             initial="hidden"
             animate="visible"
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 text-white leading-tight ${isRTL ? "text-right" : "text-left"}`}
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-white leading-tight ${isRTL ? "text-right" : "text-center"}`}
           >
             {locale === "ar" ? "تحويل الأنشطة اللاصفية مع " : schools.heroTitle}{" "}
             <span className="inline-block relative text-gradient bg-gradient-to-r from-[#3b82f6] to-[#1d4ed8] bg-clip-text text-transparent">
@@ -126,7 +126,7 @@ const Hero = () => {
             className={`text-base sm:text-lg md:text-xl lg:text-2xl text-n-2 max-w-4xl mx-auto mb-6 lg:mb-8 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}
           >
             {locale === "ar"
-              ? "تمكين مبدعي المستقبل من خلال البرمجة والذكاء الاصطناعي. منصة مدر��ة البرمجة المدعومة بالذكاء الاصطناعي تمكن المعلمين بدون خبرة برمجية سابقة من تطوير مهارات حل المشكلات والإبداع لدى الطلاب من خلال مشاريع برمجية شيقة."
+              ? "تمكين مبدعي المستقبل من خلال البرمجة والذكاء الاصطناعي. منصة مدر��ة البرمجة المدعومة بالذكاء الاصطناعي تمكن المعلمين بدون خبرة برمجية سابقة من تطوير مهارات حل المشكلات والإبدا�� لدى الطلاب من خلال مشاريع برمجية شيقة."
               : schools.heroDes}
           </motion.p>
 
@@ -134,33 +134,47 @@ const Hero = () => {
             variants={buttonVariants}
             initial="hidden"
             animate="visible"
-            className={`flex ${isRTL ? "justify-end" : "justify-center"}`}
+            className={`flex ${isRTL ? "justify-center" : "justify-center"} mt-6 sm:mt-8`}
           >
             <Message>
-              <Button
-                white
-                className="px-8 py-3 text-sm md:text-base font-semibold"
-              >
-                {locale === "ar" ? "ابدأ الآن" : "Get started"}
-              </Button>
+              <div className="relative">
+                <button className="relative inline-flex items-center justify-center h-12 px-6 sm:px-8 py-3 text-sm sm:text-base font-semibold text-n-8 bg-white hover:bg-gray-50 focus:bg-gray-100 border border-gray-200 rounded-lg min-w-[200px] shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 active:scale-95">
+                  <span className="relative z-10">
+                    {locale === "ar" ? "ابدأ الآن" : "Get started"}
+                  </span>
+                </button>
+              </div>
             </Message>
           </motion.div>
         </div>
 
-        {/* Hero Visual */}
+        {/* Enhanced Hero Visual */}
         <motion.div
           variants={visualVariants}
           initial="hidden"
           animate="visible"
-          className="relative max-w-[20rem] xs:max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24"
+          className="relative max-w-[20rem] xs:max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24 mt-8 sm:mt-12"
         >
-          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient-schools">
-            <div className="relative bg-n-8 rounded-[1rem] overflow-hidden">
-              <div className="h-[1.2rem] md:h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
+          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient-schools shadow-2xl hover:shadow-3xl transition-all duration-500">
+            <div className="relative bg-n-8 rounded-[1rem] overflow-hidden backdrop-blur-xl">
+              {/* Enhanced device frame */}
+              <div className="h-[1.2rem] md:h-[1.4rem] bg-gradient-to-r from-n-10 to-n-9 rounded-t-[0.9rem] flex items-center px-3">
+                <div className="flex space-x-1.5">
+                  <div className="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+                </div>
+              </div>
 
-              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490] relative">
-                <Generating className="absolute z-10 left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
-                <Sliders />
+              {/* Enhanced content area */}
+              <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490] relative bg-gradient-to-br from-blue-900/10 to-indigo-900/10">
+                {/* Enhanced Generating component */}
+                <Generating className="absolute z-30 left-3 right-3 bottom-4 md:left-1/2 md:right-auto md:bottom-6 md:w-[28rem] md:-translate-x-1/2 bg-gradient-to-r from-blue-800/90 to-indigo-800/90 backdrop-blur-md border border-blue-500/30 text-white rounded-xl shadow-lg" />
+
+                {/* Enhanced Sliders with loading state */}
+                <div className="relative w-full h-full">
+                  <Sliders />
+                </div>
 
                 {/* Social Icons - Enhanced responsiveness */}
                 <div
@@ -191,7 +205,7 @@ const Hero = () => {
 
                 {/* Notification - Enhanced positioning */}
                 <div
-                  className={`hidden sm:absolute ${isRTL ? "sm:-left-[3.5rem] xl:-left-[5.5rem]" : "sm:-right-[3.5rem] xl:-right-[5.5rem]"} sm:bottom-[1rem] xl:bottom-[2rem] sm:flex cursor-pointer`}
+                  className={`hidden sm:absolute ${isRTL ? "sm:-left-[3.5rem] xl:-left-[5.5rem]" : "sm:-right-[3.5rem] xl:-right-[5.5rem]"} sm:bottom-[1rem] xl:bottom-[2rem] sm:flex cursor-pointer z-30`}
                 >
                   <ScrollParallax
                     isAbsolutelyPositioned
@@ -199,14 +213,16 @@ const Hero = () => {
                     zIndex={100}
                   >
                     <Message>
-                      <Notification
-                        title={
-                          locale === "ar"
-                            ? "احجز عرض توضيحي مجاني"
-                            : "BOOK A FREE DEMO"
-                        }
-                        className="text-xs sm:text-sm"
-                      />
+                      <div className="bg-gradient-to-r from-[#3b82f6] to-[#1d4ed8] p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                        <Notification
+                          title={
+                            locale === "ar"
+                              ? "احجز عرض توضيحي مجاني"
+                              : "BOOK A FREE DEMO"
+                          }
+                          className="text-xs sm:text-sm text-white font-medium"
+                        />
+                      </div>
                     </Message>
                   </ScrollParallax>
                 </div>
@@ -235,12 +251,12 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ 
+          transition={{
             type: "spring",
             stiffness: 80,
             damping: 20,
-            duration: 0.8, 
-            delay: 1.2 
+            duration: 0.8,
+            delay: 1.2,
           }}
         >
           <CompanyLogos className="hidden sm:block relative z-10 mt-12 lg:mt-20" />
