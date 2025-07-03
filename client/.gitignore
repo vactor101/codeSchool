@@ -1,0 +1,5 @@
+# ignore all files end with .env
+*.env
+node_modules
+.next
+.config/

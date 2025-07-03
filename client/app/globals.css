@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply w-full bg-white/10 backdrop-blur-xl border border-black/50 rounded-[20px] outline-none text-white mb-2 py-4 px-6 font-medium text-[18px] tracking-[0.7] duration-300 focus:bg-white focus:text-[#121212] placeholder:text-white focus:placeholder:opacity-80 focus:placeholder:text-[#121212];
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --font-sora: "Sora", sans-serif;
+  --font-code: "Source Code Pro", monospace;
+  --font-grotesk: "Space Grotesk", sans-serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(178, 134, 250);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f5f5f5b0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(243, 147, 145);
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb)); */
+}
+
+.hero_animation {
+  background-image: linear-gradient(
+    147.92deg,
+    rgb(243, 147, 145) 10.41%,
+    rgb(178, 134, 250) 89.25%
+  );
+  animation: changeBackgroundColor 8s infinite alternate;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    rgb(243, 147, 145) 2.34%,
+    rgb(178, 134, 250) 100.78%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+@keyframes changeBackgroundColor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  16.67% {
+    opacity: 0.9;
+  }
+
+  33.33% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  66.67% {
+    opacity: 0.5;
+  }
+
+  83.33% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-2px);
+  }
+
+  40% {
+    transform: translateX(2px);
+  }
+
+  60% {
+    transform: translateX(-2px);
+  }
+
+  80% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* ///////////////////////////////////////////////////////////////// */
+
+@layer base {
+  body {
+    @apply font-sans text-n-1 text-base;
+  }
+}
+
+.rotate-45 {
+  @apply rotate-[45deg];
+}
+
+.rotate-90 {
+  @apply rotate-[90deg];
+}
+
+.rotate-135 {
+  @apply rotate-[135deg];
+}
+
+.rotate-180 {
+  @apply rotate-[180deg];
+}
+
+.rotate-225 {
+  @apply rotate-[225deg];
+}
+
+.rotate-270 {
+  @apply rotate-[270deg];
+}
+
+.rotate-315 {
+  @apply rotate-[315deg];
+}
+
+.rotate-360 {
+  @apply rotate-[360deg];
+}
+
+.-rotate-45 {
+  @apply rotate-[-45deg];
+}
+
+.-rotate-90 {
+  @apply rotate-[-90deg];
+}
+
+.-rotate-135 {
+  @apply rotate-[-135deg];
+}
+
+.-rotate-180 {
+  @apply rotate-[-180deg];
+}
+
+.-rotate-225 {
+  @apply rotate-[-225deg];
+}
+
+.-rotate-270 {
+  @apply rotate-[-270deg];
+}
+
+.-rotate-315 {
+  @apply rotate-[-315deg];
+}
+
+.-rotate-360 {
+  @apply rotate-[-360deg];
+}
+
+.card {
+  background-image: url("../public/assests/benefits/card-1.svg");
+}
+
+/* Add these RTL-specific styles */
+[dir="rtl"] {
+  font-family: 'Cairo', 'Amiri', 'Noto Sans Arabic', sans-serif;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+[dir="rtl"] .ml-auto {
+  margin-left: unset;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: unset;
+  margin-left: auto;
+}
+
+/* Custom RTL utilities */
+.rtl\:text-right[dir="rtl"] {
+  text-align: right;
+}
+
+.rtl\:text-left[dir="rtl"] {
+  text-align: left;
+}
+
+.rtl\:ml-auto[dir="rtl"] {
+  margin-left: auto;
+  margin-right: unset;
+}
+
+.rtl\:mr-auto[dir="rtl"] {
+  margin-right: auto;
+  margin-left: unset;
+}
+/* Add these styles for better Arabic font support */
+.font-arabic {
+  font-family: 'Cairo', 'Tajawal', 'Amiri', 'Noto Sans Arabic', sans-serif;
+  line-height: 1.8;
+}
+
+/* RTL specific animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* RTL hover effects */
+[dir="rtl"] .hover-translate-rtl:hover {
+  transform: translateX(-4px);
+}
+
+[dir="ltr"] .hover-translate-ltr:hover {
+  transform: translateX(4px);
+}
+
+/* Improved search input for RTL */
+[dir="rtl"] input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Better spacing for Arabic text */
+[dir="rtl"] .text-spacing {
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+}
+
+/* Responsive improvements for RTL */
+@media (max-width: 768px) {
+  [dir="rtl"] .mobile-rtl-padding {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}

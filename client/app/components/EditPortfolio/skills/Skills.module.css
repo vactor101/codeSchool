@@ -1,0 +1,9 @@
+.skill {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+.skill .item .img {
+  width: 200px;
+  margin: 0 auto 15px auto;
+}

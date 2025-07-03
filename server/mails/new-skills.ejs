@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Skills Notification</title>
+</head>
+<body>
+  <h1>Hello,</h1>
+  <p>New skills have been added to the portfolio of <%= portfolio %>.</p>
+  <p>The following skills are now available:</p>
+  <ul>
+    <% skillNames.split(", ").forEach(skill => { %>
+      <li><%= skill %></li>
+    <% }); %>
+  </ul>
+  <p>Thank you for staying updated!</p>
+</body>
+</html>
