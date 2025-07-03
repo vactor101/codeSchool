@@ -72,10 +72,30 @@ export const navigation = [
 ];
 
 export const heroIcons = [
-  { icon: homeSmile, href: "" },
-  { icon: file02 },
-  { icon: searchMd, href: "#homeSearch" },
-  { icon: plusSquare },
+  {
+    icon: homeSmile,
+    href: "/",
+    label: "Home",
+    description: "Go to homepage",
+  },
+  {
+    icon: file02,
+    href: "/courses",
+    label: "Courses",
+    description: "Browse our courses",
+  },
+  {
+    icon: searchMd,
+    href: "/faq",
+    label: "FAQ",
+    description: "Frequently asked questions",
+  },
+  {
+    icon: plusSquare,
+    href: "/contact",
+    label: "Contact",
+    description: "Get in touch with us",
+  },
 ];
 
 export const notificationImages = [notification4, notification3, notification2];

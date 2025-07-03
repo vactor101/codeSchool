@@ -130,7 +130,7 @@ const Hero = () => {
             className={`text-sm sm:text-base md:text-lg lg:text-xl text-n-2 max-w-4xl mx-auto mb-6 lg:mb-8 leading-relaxed ${isRTL ? "text-right" : "text-center"}`}
           >
             {locale === "ar"
-              ? "مدرسة البرمجة توفر بيئة تعليمية ممتعة وتفاعلية قائمة على الألعاب للأطفال لتطوير مهارات قيمة، وتعلم البرمجة والتكنولوجيا من خبراء متمرسين. انضم إلى مدرسة البرمجة اليوم وأعد طفلك للنجاح في العصر الرقمي."
+              ? "مدرسة البرمجة توفر بيئة تعليمية ممتعة وتفاعلية قائمة على الألعاب للأطفال لتطوير مهارات قيمة، وتعلم البرمجة والتكنولوجيا من خبراء متمرسين. انضم إلى مدرسة البرمجة اليوم وأعد طفلك ��لنجاح في العصر الرقمي."
               : parents.heroDes}
           </motion.p>
 
@@ -180,30 +180,57 @@ const Hero = () => {
                   <Sliders />
                 </div>
 
-                {/* Social Icons - Enhanced responsiveness */}
+                {/* Enhanced Navigation Icons */}
                 <div
-                  className={`hidden sm:absolute ${isRTL ? "sm:-right-[3.5rem] xl:-right-[5.5rem]" : "sm:-left-[3.5rem] xl:-left-[5.5rem]"} sm:bottom-[5.5rem] xl:bottom-[7.5rem] sm:rounded-2xl xl:flex z-30`}
+                  className={`hidden lg:absolute ${isRTL ? "lg:-right-[4rem] xl:-right-[6rem]" : "lg:-left-[4rem] xl:-left-[6rem]"} lg:top-1/2 lg:-translate-y-1/2 lg:flex z-30`}
                 >
                   <ScrollParallax isAbsolutelyPositioned zIndex={100}>
-                    <ul className="px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl flex flex-col sm:flex-row w-fit">
-                      {heroIcons.map(({ icon, href }, index) => (
-                        <li key={index}>
-                          <Link
-                            href={`/${href ? href : ""}`}
-                            className="p-3 sm:p-5 block hover:scale-110 transition-transform duration-300"
-                            aria-label={`${locale === "ar" ? "رابط شبكة اجتماعية" : "Social link"} ${index + 1}`}
-                          >
-                            <Image
-                              src={icon}
-                              width={20}
-                              height={20}
-                              className="w-4 h-4 sm:w-6 sm:h-6"
-                              alt={`Social icon ${index + 1}`}
-                            />
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-xl border border-purple-300/20 rounded-2xl p-2 shadow-lg hover:shadow-xl transition-all duration-300">
+                      <div className="grid grid-cols-1 gap-2">
+                        {heroIcons.map(
+                          ({ icon, href, label, description }, index) => (
+                            <div key={index} className="group relative">
+                              <Link
+                                href={href || "/"}
+                                className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/10 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-110 active:scale-95"
+                                aria-label={`${locale === "ar" ? "انتقل إلى" : "Navigate to"} ${label}`}
+                                title={description}
+                              >
+                                <Image
+                                  src={icon}
+                                  width={24}
+                                  height={24}
+                                  className="w-5 h-5 filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                                  alt={label}
+                                />
+                              </Link>
+
+                              {/* Tooltip */}
+                              <div
+                                className={`absolute ${isRTL ? "right-full mr-3" : "left-full ml-3"} top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-50`}
+                              >
+                                <div className="bg-gray-900 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap shadow-lg">
+                                  {locale === "ar"
+                                    ? label === "Home"
+                                      ? "الرئيسية"
+                                      : label === "Courses"
+                                        ? "الدورات"
+                                        : label === "FAQ"
+                                          ? "الأسئلة الشائعة"
+                                          : label === "Contact"
+                                            ? "اتصل بنا"
+                                            : label
+                                    : label}
+                                  <div
+                                    className={`absolute top-1/2 -translate-y-1/2 ${isRTL ? "right-full" : "left-full"} border-4 border-transparent ${isRTL ? "border-r-gray-900" : "border-l-gray-900"}`}
+                                  ></div>
+                                </div>
+                              </div>
+                            </div>
+                          ),
+                        )}
+                      </div>
+                    </div>
                   </ScrollParallax>
                 </div>
 
